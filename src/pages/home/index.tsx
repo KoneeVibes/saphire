@@ -1,9 +1,14 @@
 import { Container } from "@mui/material"
+import { Nav } from "../../components/navigation"
 
 export const Home: React.FC<{}> = () => {
     return (
-        <Container>
-            Site will be up on the 8th of February
+        <Container
+            sx={{
+                padding: "var(--cardPadding) var(--pagePadding)"
+            }}
+        >
+            <Nav />
         </Container>
     )
 }
