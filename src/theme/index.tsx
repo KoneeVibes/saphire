@@ -22,7 +22,7 @@ export const theme = createTheme({
             miniTablet: 425,
             tablet: 768,
             laptop: 1024,
-            desktop: 1200,
+            desktop: 1280,
         },
     },
 
