@@ -10,6 +10,7 @@ export const Navbar = styled("nav")(
             alignItems: "center",
             justifyContent: "space-between",
             gap: theme.spacing(4),
+            padding: "1rem var(--pagePadding)",
             "& ul": {
                 display: "flex",
                 gap: theme.spacing(6),
@@ -20,7 +21,7 @@ export const Navbar = styled("nav")(
                     flexDirection: "column",
                     position: "fixed",
                     left: openMenu ? "0" : "-100%",
-                    top: "calc(39px + var(--cardPadding))",
+                    top: "calc(39px + calc(var(--cardPadding)/2))",
                     width: "100%",
                     height: "100%",
                     textAlign: "center",
