@@ -1,6 +1,8 @@
-import { Box, styled } from "@mui/material";
+import React from "react";
+import { Box, Stack, styled } from "@mui/material";
+import { MotionBoxType, MotionStackType } from "../../types/app.type";
 
-export const Headerbox = styled(Box)(
+export const Headerbox: React.FC<MotionBoxType> = styled(Box)(
     ({ theme }) => ({
         display: "flex",
         flexDirection: "column",
@@ -28,3 +30,41 @@ export const Headerbox = styled(Box)(
         }
     })
 )
+
+export const HeaderImageBox: React.FC<MotionBoxType> = styled(Box)`
+    ${({ theme }) => {
+        return {
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            borderRadius: 32,
+            minHeight: 878,
+            position: "relative",
+            [theme.breakpoints.up("mobile")]: {
+                backgroundPosition: "top",
+            },
+            [theme.breakpoints.up("laptop")]: {
+                backgroundPosition: "bottom left",
+            },
+        }
+    }}
+`
+
+export const HeaderStack: React.FC<MotionStackType> = styled(Stack)`
+    ${({ theme }) => ({
+        borderTop: "1px solid #B7B7B7",
+        borderBottom: "1px solid #B7B7B7",
+        gap: "var(--flexGap)",
+        [theme.breakpoints.up("mobile")]: {
+            flexDirection: "column",
+            marginTop: "var(--sectionMargin)",
+            padding: "calc(2 * var(--cardPadding)) var(--pagePadding)"
+        },
+        [theme.breakpoints.up("tablet")]: {
+            flexDirection: "row",
+            marginTop: "unset",
+        },
+        [theme.breakpoints.up("laptop")]: {
+            padding: "calc(4 * var(--cardPadding)) var(--pagePadding)"
+        }
+    })}
+`

@@ -1,23 +1,25 @@
-import { Headerbox } from "./styled";
-import { Box, Card, CardActions, CardContent, CardHeader, Stack, Typography } from "@mui/material";
+import { HeaderImageBox, HeaderStack, Headerbox } from "./styled";
+import { Box, Card, CardActions, CardContent, CardHeader, Typography } from "@mui/material";
 import { HeaderType } from "../../types/app.type";
+import { motion } from "framer-motion";
 
 export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardContent, cardActionButton, headerText }) => {
     return (
-        <Headerbox>
+        <Headerbox
+            component={motion.div}
+            initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
+            whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
+        >
             <Box
                 padding={"0 var(--pagePadding)"}
             >
                 {headerText}
-                <Box
+                <HeaderImageBox
+                    component={motion.div}
+                    initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
+                    whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
                     sx={{
                         backgroundImage: `url(${headerPhoto})`,
-                        backgroundPosition: { mobile: "top", laptop: "bottom left" },
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        borderRadius: 8,
-                        minHeight: 878,
-                        position: "relative",
                     }}
                 >
                     <Card className="card">
@@ -25,16 +27,9 @@ export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardConte
                         <CardContent>{cardContent}</CardContent>
                         <CardActions>{cardActionButton}</CardActions>
                     </Card>
-                </Box>
+                </HeaderImageBox>
             </Box>
-            <Stack
-                direction={{ mobile: "column", tablet: "row" }}
-                padding={{ mobile: "calc(2 * var(--cardPadding)) var(--pagePadding)", laptop: "calc(4 * var(--cardPadding)) var(--pagePadding)" }}
-                gap={"var(--flexGap)"}
-                marginTop={{ mobile: "var(--sectionMargin)", tablet: "unset" }}
-                borderTop={"1px solid #B7B7B7"}
-                borderBottom={"1px solid #B7B7B7"}
-            >
+            <HeaderStack>
                 <Box
                     flex={"1 1 20%"}
                 >
@@ -46,7 +41,7 @@ export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardConte
                         color={"#8A8474"}
                         whiteSpace={"normal"}
                     >
-                        Working worlwide for →
+                        Working worldwide for →
                     </Typography>
                 </Box>
                 <Box
@@ -136,7 +131,7 @@ export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardConte
                         Public Services
                     </Typography>
                 </Box>
-            </Stack>
+            </HeaderStack>
         </Headerbox>
     )
 }
