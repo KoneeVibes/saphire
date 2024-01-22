@@ -3,6 +3,7 @@ import { Nav } from "../../components/navigation";
 import { MarqueeBox } from "../../components/marquee";
 import { Header } from "../../components/header";
 import Headerphoto from "../../assets/headerPhoto.svg";
+import { CaseStudies } from "../../containers/caseStudies";
 
 export const Home: React.FC<{}> = () => {
     return (
@@ -84,7 +85,7 @@ export const Home: React.FC<{}> = () => {
                     overflowX: "hidden"
                 }}
             >
-                
+                <CaseStudies />
             </Container>
         </>
     )

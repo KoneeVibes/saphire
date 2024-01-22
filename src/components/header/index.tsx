@@ -2,6 +2,7 @@ import { HeaderImageBox, HeaderStack, Headerbox } from "./styled";
 import { Box, Card, CardActions, CardContent, CardHeader, Typography } from "@mui/material";
 import { HeaderType } from "../../types/app.type";
 import { motion } from "framer-motion";
+import { stackDetails } from "../../configs/content";
 
 export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardContent, cardActionButton, headerText }) => {
     return (
@@ -34,9 +35,10 @@ export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardConte
                     flex={"1 1 20%"}
                 >
                     <Typography
+                        variant="h2"
                         fontFamily={"Helvetica Neue"}
                         fontWeight={400}
-                        fontSize={22.419}
+                        fontSize={{ mobile: 20, laptop: 22.419 }}
                         lineHeight={"normal"}
                         color={"#8A8474"}
                         whiteSpace={"normal"}
@@ -44,93 +46,34 @@ export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardConte
                         Working worldwide for →
                     </Typography>
                 </Box>
-                <Box
-                    flex={"1 1 20%"}
-                    display={"flex"}
-                    flexDirection={"column"}
-                    gap={"var(--flexGap)"}
-                >
-                    <Typography
-                        variant="body1"
-                        fontFamily={"Helvetica Neue"}
-                        fontWeight={400}
-                        fontSize={22.419}
-                        lineHeight={"normal"}
-                        color={"#000000"}
-                        whiteSpace={"normal"}
-                    >
-                        Cultural Heritage
-                    </Typography>
-                    <Typography
-                        variant="body1"
-                        fontFamily={"Helvetica Neue"}
-                        fontWeight={400}
-                        fontSize={22.419}
-                        lineHeight={"normal"}
-                        color={"#000000"}
-                        whiteSpace={"normal"}
-                    >
-                        Creative Design
-                    </Typography>
-                </Box>
-                <Box
-                    flex={"1 1 20%"}
-                    display={"flex"}
-                    flexDirection={"column"}
-                    gap={"var(--flexGap)"}
-                >
-                    <Typography
-                        variant="body1"
-                        fontFamily={"Helvetica Neue"}
-                        fontWeight={400}
-                        fontSize={22.419}
-                        lineHeight={"normal"}
-                        color={"#000000"}
-                        whiteSpace={"normal"}
-                    >
-                        Community
-                    </Typography>
-                    <Typography
-                        variant="body1"
-                        fontFamily={"Helvetica Neue"}
-                        fontWeight={400}
-                        fontSize={22.419}
-                        lineHeight={"normal"}
-                        color={"#000000"}
-                        whiteSpace={"normal"}
-                    >
-                        Not-For-Profit
-                    </Typography>
-                </Box>
-                <Box
-                    flex={"1 1 20%"}
-                    display={"flex"}
-                    flexDirection={"column"}
-                    gap={"var(--flexGap)"}
-                >
-                    <Typography
-                        variant="body1"
-                        fontFamily={"Helvetica Neue"}
-                        fontWeight={400}
-                        fontSize={22.419}
-                        lineHeight={"normal"}
-                        color={"#000000"}
-                        whiteSpace={"normal"}
-                    >
-                        Architectural Innovations
-                    </Typography>
-                    <Typography
-                        variant="body1"
-                        fontFamily={"Helvetica Neue"}
-                        fontWeight={400}
-                        fontSize={22.419}
-                        lineHeight={"normal"}
-                        color={"#000000"}
-                        whiteSpace={"normal"}
-                    >
-                        Public Services
-                    </Typography>
-                </Box>
+                {stackDetails.map((detail, k) => {
+                    return (
+                        <Box
+                            key={k}
+                            flex={"1 1 20%"}
+                            display={"flex"}
+                            flexDirection={"column"}
+                            gap={"var(--flexGap)"}
+                        >
+                            {detail.map((item, k) => {
+                                return (
+                                    <Typography
+                                        key={k}
+                                        variant="body1"
+                                        fontFamily={"Helvetica Neue"}
+                                        fontWeight={400}
+                                        fontSize={{ mobile: 18, laptop: 22.419 }}
+                                        lineHeight={"normal"}
+                                        color={"#000000"}
+                                        whiteSpace={"normal"}
+                                    >
+                                        {item}
+                                    </Typography>
+                                )
+                            })}
+                        </Box>
+                    )
+                })}
             </HeaderStack>
         </Headerbox>
     )
