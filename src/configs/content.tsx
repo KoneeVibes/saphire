@@ -43,4 +43,8 @@ export const caseStudies = [
         bgImage: artlet,
         bgColor: "#04EFFF",
     },
+];
+
+export const formFields = [
+    "First Name", "Last Name", "Your Email", "Company Name", "Tell Us About The Project (Scope, Timeline, Budget):*"
 ]

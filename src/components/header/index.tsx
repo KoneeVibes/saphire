@@ -1,4 +1,4 @@
-import { HeaderImageBox, HeaderStack, Headerbox } from "./styled";
+import { BgImageBox, HeaderStack, Headerbox } from "./styled";
 import { Box, Card, CardActions, CardContent, CardHeader, Typography } from "@mui/material";
 import { HeaderType } from "../../types/app.type";
 import { motion } from "framer-motion";
@@ -15,22 +15,26 @@ export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardConte
                 padding={"0 var(--pagePadding)"}
             >
                 {headerText}
-                <HeaderImageBox
+                <BgImageBox
                     component={motion.div}
                     initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
                     whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
-                    sx={{
-                        backgroundImage: `url(${headerPhoto})`,
-                    }}
+                    bg={`url(${headerPhoto})`}
+                    borderRadius={32}
+                    minHeight={878}
                 >
                     <Card className="card">
                         <CardHeader title={cardTitle} />
                         <CardContent>{cardContent}</CardContent>
                         <CardActions>{cardActionButton}</CardActions>
                     </Card>
-                </HeaderImageBox>
+                </BgImageBox>
             </Box>
-            <HeaderStack>
+            <HeaderStack
+                component={motion.div}
+                initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
+                whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
+            >
                 <Box
                     flex={"1 1 20%"}
                 >

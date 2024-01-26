@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Stack, styled } from "@mui/material";
-import { MotionBoxType, MotionStackType } from "../../types/app.type";
+import { BgImageBoxType, MotionBoxType, MotionStackType } from "../../types/app.type";
 
 export const Headerbox: React.FC<MotionBoxType> = styled(Box)(
     ({ theme }) => ({
@@ -31,13 +31,14 @@ export const Headerbox: React.FC<MotionBoxType> = styled(Box)(
     })
 )
 
-export const HeaderImageBox: React.FC<MotionBoxType> = styled(Box)`
-    ${({ theme }) => {
+export const BgImageBox: React.FC<BgImageBoxType> = styled(Box) <{ bg: string, borderRadius: number, minHeight: number }>`
+    ${({ theme, bg, borderRadius, minHeight }) => {
         return {
+            backgroundImage: bg,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            borderRadius: 32,
-            minHeight: 878,
+            borderRadius: borderRadius,
+            minHeight: minHeight,
             position: "relative",
             [theme.breakpoints.up("mobile")]: {
                 backgroundPosition: "top",

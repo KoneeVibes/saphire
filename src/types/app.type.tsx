@@ -11,9 +11,24 @@ export type HeaderType = {
 }
 
 export type MotionBoxType = {
-    children: React.ReactNode
+    children?: React.ReactNode,
 } & BoxProps & Omit<MotionProps, keyof BoxProps>
 
 export type MotionStackType = {
     children: React.ReactNode
 } & StackProps & Omit<MotionProps, keyof BoxProps>
+
+export type BgImageBoxType = {
+    bg: string,
+    borderRadius: number,
+    minHeight: number,
+} & MotionBoxType
+
+export type MarqueeBoxType = {
+    content: React.ReactNode
+    pauseOnHover?: boolean
+    pauseOnClick?: boolean
+    bg?: string
+    border?: string
+    padding?: string
+}

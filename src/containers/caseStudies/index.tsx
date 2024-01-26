@@ -36,12 +36,14 @@ export const CaseStudies: React.FC<{}> = () => {
                             }}
                         >
                             <CardMedia
-                                sx={{ height: 140 }}
+                                sx={{ height: 405 }}
                                 image={caseStudy.bgImage}
                             />
                             <CardActions
                                 sx={{
-                                    background: caseStudy.bgColor
+                                    background: caseStudy.bgColor,
+                                    padding: { mobile: "var(--cardPadding)", laptop: "0 var(--cardPadding)" },
+                                    minHeight: { laptop: 107 }
                                 }}
                             >
                                 <Typography
