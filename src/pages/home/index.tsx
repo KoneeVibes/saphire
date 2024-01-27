@@ -7,6 +7,7 @@ import { CaseStudies } from "../../containers/caseStudies";
 import { About } from "../../containers/about";
 import { Formbox } from "../../containers/form/formfields";
 import { FormHeader } from "../../containers/form/formheader";
+import { Footer } from "../../components/footer";
 
 export const Home: React.FC<{}> = () => {
     return (
@@ -104,6 +105,7 @@ export const Home: React.FC<{}> = () => {
                 padding={"var(--cardPadding) 0 0"}
             />
             <Formbox />
+            <Footer />
         </Container>
     )
 }
