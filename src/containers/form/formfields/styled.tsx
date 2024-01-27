@@ -40,6 +40,9 @@ export const Form: React.FC<MotionBoxType> = styled(Box)(
                     minInlineSize: "stretch",
                 }
             },
+            "& .fullWidth": {
+                flex: "1 1 100% !important",
+            },
             [theme.breakpoints.down("tablet")]: {
                 padding: "var(--cardPadding) 0",
             }

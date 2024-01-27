@@ -28,10 +28,13 @@ export const Formbox: React.FC<{}> = () => {
             >
                 {formFields.map((field, k) => {
                     return (
-                        <fieldset key={k}>
+                        <fieldset
+                            key={k}
+                            className={(field.includes("Tell Us About")) ? "fullWidth" : ""}
+                        >
                             <label htmlFor={field.split(' ').join('')}>{field}</label><br />
                             {(field.includes("Tell Us About")) ?
-                                <textarea id={field.split(' ').join('')} name={field.split(' ').join('')} rows={7}/>
+                                <textarea id={field.split(' ').join('')} name={field.split(' ').join('')} rows={7} />
                                 :
                                 <input id={field.split(' ').join('')} type="text" style={{ width: "stretch" }} />
                             }
