@@ -11,7 +11,7 @@ export const CaseStudiesStack: React.FC<MotionStackType> = styled(Stack)(
     ({ theme }) => ({
         flexDirection: "column",
         justifyContent: "space-between",
-        gap: "calc(1.5 * var(--flexGap))",
+        gap: "var(--flexGap)",
         overflowY: "hidden",
         padding: "calc(2 * var(--cardPadding)) 0",
         [theme.breakpoints.up("laptop")]: {

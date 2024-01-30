@@ -47,4 +47,37 @@ export const caseStudies = [
 
 export const formFields = [
     "First Name", "Last Name", "Your Email", "Company Name", "Tell Us About The Project (Scope, Timeline, Budget):*"
-]
+];
+
+export const workWithUsStackItems = [
+    {
+        body: "Work with us",
+    },
+    {
+        body: "We're excited to discover your organization and assist in developing a unique and innovative visual strategy. Let's think outside the box together.",
+        width: { laptop: "30%" }
+    },
+    {
+        body: "You can contact us at:",
+        contact: "info@saphire.com",
+    },
+];
+
+export const footerItems = [
+    {
+        title: "Office",
+        body: ["Lagos , Nigeria.", ["Monday → Friday", "9am to 6pm", "(UTC)"]],
+    },
+    {
+        title: "Connect with us",
+        body: ["info@Saphire.com"]
+    },
+    {
+        title: "Join our newsletter",
+        body: ["Name", "E-mail"]
+    },
+    {
+        title: "Follow us",
+        body: [["Instagram", "Behance"], ["Dribbble", "Linkedin"], ["Medium", "Spotify"]],
+    }
+];

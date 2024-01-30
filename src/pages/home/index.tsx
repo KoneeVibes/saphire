@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import { Nav } from "../../components/navigation";
 import { MarqueeBox } from "../../components/marquee";
 import { Header } from "../../components/header";
@@ -8,6 +8,8 @@ import { About } from "../../containers/about";
 import { Formbox } from "../../containers/form/formfields";
 import { FormHeader } from "../../containers/form/formheader";
 import { Footer } from "../../components/footer";
+import { FooterBgBox } from "../../containers/footerbgbox";
+import { motion } from "framer-motion";
 
 export const Home: React.FC<{}> = () => {
     return (
@@ -105,7 +107,15 @@ export const Home: React.FC<{}> = () => {
                 padding={"var(--cardPadding) 0 0"}
             />
             <Formbox />
-            <Footer />
+            <Box
+                bgcolor={"#000"}
+                component={motion.div}
+                initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
+                whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
+            >
+                <FooterBgBox />
+                <Footer />
+            </Box>
         </Container>
     )
 }
