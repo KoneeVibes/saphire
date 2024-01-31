@@ -43,6 +43,7 @@ export const Footer: React.FC<{}> = () => {
                 {footerItems.map((item, key) => {
                     return (
                         <Box
+                            key={key}
                             display={"flex"}
                             flexDirection={"column"}
                             gap={"var(--flexGap)"}

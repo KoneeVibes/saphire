@@ -16,6 +16,7 @@ export const Contactbox = ({ body }: { body: (string | string[])[] }) => {
                     case 0:
                         return (
                             <Box
+                                key={key}
                                 display={"flex"}
                                 flexDirection={"column"}
                                 paddingBottom={item === "Lagos , Nigeria." ? "var(--cardPadding)" : ""}
@@ -59,6 +60,7 @@ export const Contactbox = ({ body }: { body: (string | string[])[] }) => {
                     case 1:
                         return Array.isArray(item) ?
                             (<Stack
+                                key={key}
                                 direction={{ laptop: (item[0] === "Monday → Friday") ? "column" : "row" }}
                                 gap={".5rem"}
                             >
@@ -92,6 +94,7 @@ export const Contactbox = ({ body }: { body: (string | string[])[] }) => {
                     case 2:
                         return Array.isArray(item) ?
                             (<Stack
+                                key={key}
                                 direction={{ laptop: "row" }}
                                 gap={".5rem"}
                             >
