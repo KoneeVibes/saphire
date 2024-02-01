@@ -1,10 +1,12 @@
-import { Card, CardActions, CardMedia, IconButton, Typography } from "@mui/material";
+import { Card, CardActionArea, CardActions, CardMedia, IconButton, Typography } from "@mui/material";
 import { caseStudies } from "../../configs/content";
 import { LinkTo } from "../../assets";
 import { CaseStudiesBox, CaseStudiesStack } from "./styled";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export const CaseStudies: React.FC<{}> = () => {
+    const navigate = useNavigate();
     return (
         <CaseStudiesBox
             component={motion.div}
@@ -35,16 +37,31 @@ export const CaseStudies: React.FC<{}> = () => {
                                 boxShadow: "none",
                             }}
                         >
-                            <CardMedia
-                                sx={{ height: 405 }}
-                                image={caseStudy.bgImage}
-                            />
+                            <CardActionArea
+                                onClick={
+                                    () => navigate(`/casestudies/${caseStudy.title
+                                        .split(" ")
+                                        .join("")
+                                        .toLowerCase()}`)
+                                }
+                            >
+                                <CardMedia
+                                    sx={{ height: 405 }}
+                                    image={caseStudy.bgImage}
+                                />
+                            </CardActionArea>
                             <CardActions
                                 sx={{
                                     background: caseStudy.bgColor,
                                     padding: { mobile: "var(--cardPadding)", laptop: "0 var(--cardPadding)" },
                                     minHeight: { laptop: 107 }
                                 }}
+                                onClick={
+                                    () => navigate(`/casestudies/${caseStudy.title
+                                        .split(" ")
+                                        .join("")
+                                        .toLowerCase()}`)
+                                }
                             >
                                 <Typography
                                     variant="h3"
@@ -56,7 +73,14 @@ export const CaseStudies: React.FC<{}> = () => {
                                 >
                                     {caseStudy.title}
                                 </Typography>
-                                <IconButton>
+                                <IconButton
+                                    onClick={
+                                        () => navigate(`/casestudies/${caseStudy.title
+                                            .split(" ")
+                                            .join("")
+                                            .toLowerCase()}`)
+                                    }
+                                >
                                     <LinkTo />
                                 </IconButton>
                             </CardActions>
@@ -64,6 +88,6 @@ export const CaseStudies: React.FC<{}> = () => {
                     )
                 })}
             </CaseStudiesStack>
-        </CaseStudiesBox>
+        </CaseStudiesBox >
     )
 }

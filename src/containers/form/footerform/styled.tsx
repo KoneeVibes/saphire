@@ -28,7 +28,8 @@ export const Form: React.FC<MotionBoxType> = styled(Box)(
             padding: 0,
             margin: 0,
             border: "none",
-            display: "flex"
+            display: "flex",
+            alignItems: "center",
         },
         [theme.breakpoints.down("laptop")]: {
             alignItems: "flex-start",

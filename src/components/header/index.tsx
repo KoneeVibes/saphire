@@ -4,12 +4,13 @@ import { HeaderType } from "../../types/app.type";
 import { motion } from "framer-motion";
 import { stackDetails } from "../../configs/content";
 
-export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardContent, cardActionButton, headerText }) => {
+export const Header: React.FC<HeaderType> = ({ headerPhoto, cardTitle, cardContent, cardActionButton, headerText, carddisplayvalue }) => {
     return (
         <Headerbox
             component={motion.div}
             initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
             whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
+            carddisplayvalue={carddisplayvalue}
         >
             <Box
                 padding={"0 var(--pagePadding)"}

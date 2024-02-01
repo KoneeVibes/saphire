@@ -1,6 +1,8 @@
 import wurlet from "../assets/wurlet.svg";
 import chaindustry from "../assets/chaindustry.svg";
 import artlet from "../assets/artlet.svg";
+import wurletheader from "../assets/wurletheader.svg";
+import dotoearnheader from "../assets/dotoearnheader.svg";
 
 export const navLinks = [
     {
@@ -31,11 +33,13 @@ export const caseStudies = [
     {
         title: "Wurlet Security",
         bgImage: wurlet,
+        headerImg: wurletheader,
         bgColor: "#F4D046",
     },
     {
-        title: "Do To Earn by Chaindustry",
+        title: "Do To Earn",
         bgImage: chaindustry,
+        headerImg: dotoearnheader,
         bgColor: "#C19FFF",
     },
     {

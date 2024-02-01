@@ -4,14 +4,16 @@ import { MotionProps } from "framer-motion";
 
 export type HeaderType = {
     headerText: React.ReactNode,
-    headerPhoto: string,
-    cardTitle: React.ReactNode,
-    cardContent: React.ReactNode,
-    cardActionButton: React.ReactNode
+    headerPhoto: string | undefined,
+    carddisplayvalue?: string,
+    cardTitle?: React.ReactNode,
+    cardContent?: React.ReactNode,
+    cardActionButton?: React.ReactNode
 }
 
 export type MotionBoxType = {
     children?: React.ReactNode,
+    carddisplayvalue?: string,
 } & BoxProps & Omit<MotionProps, keyof BoxProps>
 
 export type MotionStackType = {

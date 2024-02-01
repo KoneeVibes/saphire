@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Stack, styled } from "@mui/material";
 import { BgImageBoxType, MotionBoxType, MotionStackType } from "../../types/app.type";
 
-export const Headerbox: React.FC<MotionBoxType> = styled(Box)(
-    ({ theme }) => ({
+export const Headerbox: React.FC<MotionBoxType> = styled(Box)<{ carddisplayvalue?: string }>(
+    ({ theme, carddisplayvalue }) => ({
         display: "flex",
         flexDirection: "column",
         margin: "0 0 var(--sectionMargin)",
@@ -13,6 +13,7 @@ export const Headerbox: React.FC<MotionBoxType> = styled(Box)(
             bottom: 0,
             boxShadow: "none",
             background: "transparent",
+            display: carddisplayvalue || "block",
             "& .MuiCardHeader-content": {
                 width: "100%"
             },
