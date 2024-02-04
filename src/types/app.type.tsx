@@ -34,3 +34,19 @@ export type MarqueeBoxType = {
     border?: string
     padding?: string
 }
+
+export type OverviewBodyType ={
+    details: {
+        title: {
+            main: string;
+            number: string;
+            subText: string;
+        };
+        body: {
+            number: string;
+            subtitle: string;
+            details: string;
+        }[];
+        img: React.ReactNode | string;
+    }[] | undefined
+}

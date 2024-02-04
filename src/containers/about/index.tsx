@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 export const About = () => {
     return (
         <AboutBox
+            id="about"
             component={motion.div}
             initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
             whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
@@ -52,7 +53,7 @@ export const About = () => {
                     variant="body1"
                     fontFamily={"Helvetica Neue"}
                     fontWeight={500}
-                    fontSize={{ mobile: 24, miniTablet: 28, laptop: 32, desktop: 41}}
+                    fontSize={{ mobile: 24, miniTablet: 28, laptop: 32, desktop: 41 }}
                     color={"#242424"}
                     lineHeight={"normal"}
                     whiteSpace={"normal"}

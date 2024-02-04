@@ -8,6 +8,7 @@ import { FooterForm } from "../../containers/form/footerform";
 export const Footer: React.FC<{}> = () => {
     return (
         <Footerbox
+            id="contact"
             component={motion.footer}
             initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
             whileInView={{ opacity: 1, transform: "translate(0, 0)" }}

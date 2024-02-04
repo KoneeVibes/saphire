@@ -5,6 +5,7 @@ import { caseStudies } from "../../configs/content";
 import { MarqueeBox } from "../../components/marquee";
 import { Header } from "../../components/header";
 import { Footer } from "../../components/footer";
+import { OverviewBody } from "../../containers/overview";
 
 export const Overview: React.FC<{}> = () => {
     const { overview } = useParams();
@@ -59,6 +60,7 @@ export const Overview: React.FC<{}> = () => {
                 headerPhoto={caseStudy?.headerImg}
                 carddisplayvalue={"none"}
             />
+            <OverviewBody details={caseStudy?.details} />
             <Footer />
         </Container>
     )

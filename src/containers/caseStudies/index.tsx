@@ -9,6 +9,7 @@ export const CaseStudies: React.FC<{}> = () => {
     const navigate = useNavigate();
     return (
         <CaseStudiesBox
+            id="casestudies"
             component={motion.div}
             initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
             whileInView={{ opacity: 1, transform: "translate(0, 0)" }}

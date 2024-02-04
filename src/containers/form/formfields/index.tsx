@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 export const Formbox: React.FC<{}> = () => {
     return (
         <Form
+            id="workwithus"
             component={motion.div}
             initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
             whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
