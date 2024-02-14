@@ -3,7 +3,15 @@ import chaindustry from "../assets/chaindustry.svg";
 import artlet from "../assets/artlet.svg";
 import wurletheader from "../assets/wurletheader.svg";
 import dotoearnheader from "../assets/dotoearnheader.svg";
-import { DoToEarnImage, WurletImage } from "../assets";
+import { DoToEarnImage, Row1DoToEarn, Row2DoToEarn, Row3DoToEarn, WurletImage } from "../assets";
+import { Gallery } from "../components/gallery";
+import { GalleryGrid } from "../components/gallery/grid";
+import rowB01Wurlet from "../assets/RowB01-wurlet.svg";
+import rowA01Wurlet from "../assets/RowA01-wurlet.svg";
+import rowA02Wurlet from "../assets/RowA02-wurlet.svg";
+import rowB02Wurlet from "../assets/RowB02-wurlet.svg";
+import rowA03Wurlet from "../assets/RowA03-wurlet.svg";
+import rowB03Wurlet from "../assets/RowB03-wurlet.svg";
 
 export const navLinks = [
     {
@@ -65,7 +73,29 @@ export const caseStudies = [
                         details: "We will create an intuitive and user-friendly platform that is built on a strong brand identity system. The brand identity system will include a comprehensive set of deliverables, including a logo, color palette, typography, and iconography. We will develop a cohesive system that is consistent across all touchpoints, including the web platform, mobile app, and marketing materials. This system will help to establish a strong and recognizable brand identity that will differentiate the company from competitors and create a lasting impression on users. The platform will be designed with the user's needs in mind, making it easy to navigate and understand. The platform will also offer advanced security features to ensure the safety of users' data. We will create a seamless user experience that builds trust and reliability, and promotes brand loyalty."
                     }
                 ],
-                img: ""
+                img: <Gallery
+                    rows={[
+                        <GalleryGrid
+                            a={rowA01Wurlet}
+                            b={rowB01Wurlet}
+                            tabletA={7.5}
+                            tabletB={5.5}
+                        />,
+                        <GalleryGrid
+                            a={rowA02Wurlet}
+                            b={rowB02Wurlet}
+                            tabletA={6}
+                            tabletB={6}
+                        />,
+                        <GalleryGrid
+                            a={rowA03Wurlet}
+                            b={rowB03Wurlet}
+                            tabletA={7.5}
+                            tabletB={5.5}
+                        />
+                    ]}
+                    gap={"calc(var(--flexGap)/2)"}
+                />
             },
         ]
     },
@@ -99,7 +129,7 @@ export const caseStudies = [
                 title: {
                     main: "",
                     number: "(03)",
-                    subText: "Solution"
+                    subText: "Perform Task"
                 },
                 body: [
                     {
@@ -108,22 +138,22 @@ export const caseStudies = [
                         details: "Visual progress tracking and rewards display motivate users to complete tasks and earn rewards. Interactive elements and intuitive navigation enhance the overall user experience during task execution. Seamless integration with other platform features, such as the wallet and social components, creates a cohesive and immersive user journey. Regular user feedback and iterative improvements contribute to refining the task performance design for maximum user satisfaction."
                     }
                 ],
-                img: ""
+                img: <Gallery rows={[<Row1DoToEarn />, <Row2DoToEarn />]} gap="calc(var(--flexGap))" />
             },
             {
                 title: {
                     main: "",
-                    number: "(03)",
+                    number: "(04)",
                     subText: "Leader Board"
                 },
                 body: [
                     {
                         number: "",
                         subtitle: "",
-                        details: "Visual progress tracking and rewards display motivate users to complete tasks and earn rewards. Interactive elements and intuitive navigation enhance the overall user experience during task execution. Seamless integration with other platform features, such as the wallet and social components, creates a cohesive and immersive user journey. Regular user feedback and iterative improvements contribute to refining the task performance design for maximum user satisfaction."
+                        details: "Real-time updates and ranking positions provide a dynamic and motivating experience for users. Privacy controls ensure users' comfort and allow them to choose their level of visibility on the leaderboard. Integration of gamification elements, such as badges or rewards for leaderboard success, further incentivizes participation. Regular evaluation and adjustments to the design ensure an exciting and fair competition environment for all users."
                     }
                 ],
-                img: ""
+                img: <Gallery rows={[<Row3DoToEarn />]} gap="calc(var(--flexGap))" />
             },
         ]
     },

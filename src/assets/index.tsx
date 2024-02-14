@@ -4,3 +4,6 @@ export { ReactComponent as Separator } from "./separator.svg";
 export { ReactComponent as Send } from "./send.svg";
 export { ReactComponent as WurletImage } from "./01-wurlet.svg";
 export { ReactComponent as DoToEarnImage } from "./01-doToEarn.svg";
+export { ReactComponent as Row1DoToEarn } from "./Row01-doToEarn.svg";
+export { ReactComponent as Row2DoToEarn } from "./Row02-doToEarn.svg";
+export { ReactComponent as Row3DoToEarn } from "./Row03-doToEarn.svg";

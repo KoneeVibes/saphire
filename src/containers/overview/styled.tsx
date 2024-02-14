@@ -19,6 +19,7 @@ export const DetailStack: React.FC<MotionStackType> = styled(Stack)(
         gap: "var(--flexGap)",
         [theme.breakpoints.up("laptop")]: {
             flexDirection: "row",
+            padding: "calc(1.5 * var(--sectionMargin)) 0",
         }
     })
 );

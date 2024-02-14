@@ -35,7 +35,7 @@ export type MarqueeBoxType = {
     padding?: string
 }
 
-export type OverviewBodyType ={
+export type OverviewBodyType = {
     details: {
         title: {
             main: string;
@@ -49,4 +49,9 @@ export type OverviewBodyType ={
         }[];
         img: React.ReactNode | string;
     }[] | undefined
+}
+
+export type GalleryPropsType = {
+    gap: string;
+    rows: React.ReactNode[]
 }
