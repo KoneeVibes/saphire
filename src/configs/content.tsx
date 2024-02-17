@@ -1,3 +1,6 @@
+import pinatta from "../assets/pinattaHeader.svg";
+import coronavirus from "../assets/coronavirusHeader.svg";
+import monieside from "../assets/moniesideHeader.svg";
 import wurlet from "../assets/wurlet.svg";
 import chaindustry from "../assets/chaindustry.svg";
 import artlet from "../assets/artlet.svg";
@@ -30,6 +33,24 @@ export const navLinks = [
         name: "Contact",
         url: "#contact"
     }
+];
+
+export const comingSoon = [
+    {
+        headerImg: pinatta,
+        title: "Pinatta",
+        body: "Building the future of beverages",
+    },
+    {
+        headerImg: coronavirus,
+        title: "Corona virus ",
+        body: "Putting the world back in motion",
+    },
+    {
+        headerImg: monieside,
+        title: "Monieside",
+        body: "future of finance in tech ecosystem",
+    },
 ]
 
 export const stackDetails = [

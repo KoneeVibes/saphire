@@ -9,9 +9,6 @@ export const Footer: React.FC<{}> = () => {
     return (
         <Footerbox
             id="contact"
-            component={motion.footer}
-            initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
-            whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
         >
             <WorkWithUsStack
                 component={motion.div}
@@ -36,11 +33,7 @@ export const Footer: React.FC<{}> = () => {
                     )
                 })}
             </WorkWithUsStack>
-            <ContactStack
-                component={motion.div}
-                initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
-                whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
-            >
+            <ContactStack>
                 {footerItems.map((item, key) => {
                     return (
                         <Box

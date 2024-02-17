@@ -1,15 +1,11 @@
 import { Typography } from "@mui/material";
 import { formFields } from "../../../configs/content";
 import { Form } from "./styled";
-import { motion } from "framer-motion";
 
 export const Formbox: React.FC<{}> = () => {
     return (
         <Form
             id="workwithus"
-            component={motion.div}
-            initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
-            whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
         >
             <Typography
                 variant="h2"
@@ -23,10 +19,7 @@ export const Formbox: React.FC<{}> = () => {
                 Ready to do big things? Fill out our form below
                 and tell us about your vision.
             </Typography>
-            <motion.form
-                initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
-                whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
-            >
+            <form>
                 {formFields.map((field, k) => {
                     return (
                         <fieldset
@@ -42,7 +35,7 @@ export const Formbox: React.FC<{}> = () => {
                         </fieldset>
                     )
                 })}
-            </motion.form>
+            </form>
         </Form>
     )
 }

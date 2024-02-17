@@ -6,10 +6,11 @@ import { MarqueeBox } from "../../components/marquee";
 import { Header } from "../../components/header";
 import { Footer } from "../../components/footer";
 import { OverviewBody } from "../../containers/overview";
+import { Related } from "../../containers/related";
 
 export const Overview: React.FC<{}> = () => {
     const { overview } = useParams();
-    const caseStudy = caseStudies.find((caseStudy) => {
+    const caseStudy = caseStudies.filter((caseStudy) => {
         return (
             caseStudy.title
                 .split(" ")
@@ -17,6 +18,7 @@ export const Overview: React.FC<{}> = () => {
                 .toLowerCase() === overview
         )
     });
+    console.log(typeof caseStudy)
     return (
         <Container
             sx={{
@@ -54,13 +56,14 @@ export const Overview: React.FC<{}> = () => {
                         textTransform={"uppercase"}
                         whiteSpace={"normal"}
                     >
-                        {caseStudy?.title}
+                        {caseStudy[0]?.title}
                     </Typography>
                 }
-                headerPhoto={caseStudy?.headerImg}
+                headerCarousel={caseStudy}
                 carddisplayvalue={"none"}
             />
-            <OverviewBody details={caseStudy?.details} />
+            <OverviewBody details={caseStudy[0]?.details} />
+            <Related activeCaseStudy={overview} />
             <Footer />
         </Container>
     )

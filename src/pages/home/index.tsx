@@ -1,22 +1,21 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { Nav } from "../../components/navigation";
 import { MarqueeBox } from "../../components/marquee";
 import { Header } from "../../components/header";
-import Headerphoto from "../../assets/headerPhoto.svg";
 import { CaseStudies } from "../../containers/caseStudies";
 import { About } from "../../containers/about";
 import { Formbox } from "../../containers/form/formfields";
 import { FormHeader } from "../../containers/form/formheader";
 import { Footer } from "../../components/footer";
 import { FooterBgBox } from "../../containers/footerbgbox";
-import { motion } from "framer-motion";
+import { comingSoon } from "../../configs/content";
 
 export const Home: React.FC<{}> = () => {
     return (
         <Container
             sx={{
                 padding: "0",
-                overflow: "hidden"
+                overflowX: "hidden",
             }}
         >
             <Nav />
@@ -54,50 +53,7 @@ export const Home: React.FC<{}> = () => {
                         SAPHIRE
                     </Typography>
                 }
-                headerPhoto={Headerphoto}
-                cardTitle={
-                    <Typography
-                        variant="h2"
-                        fontFamily={"Helvetica Neue"}
-                        fontWeight={900}
-                        fontSize={{ mobile: 35 }}
-                        lineHeight={"normal"}
-                    >
-                        Pinatta
-                    </Typography>
-                }
-                cardContent={
-                    <Typography
-                        variant="body1"
-                        fontFamily={"Helvetica Neue"}
-                        fontWeight={400}
-                        fontSize={{ mobile: 20 }}
-                        lineHeight={"normal"}
-                        textTransform={"capitalize"}
-                        whiteSpace={"normal"}
-                    >
-                        Building the future of beverages
-                    </Typography>
-                }
-                cardActionButton={
-                    <Button
-                        variant={"contained"}
-                        sx={{
-                            fontFamily: "Helvetica Neue",
-                            fontWeight: 300,
-                            fontSize: 10,
-                            lineHeight: "normal",
-                            background: "#141414",
-                            borderRadius: 50,
-                            textTransform: "capitalize",
-                            "&:hover": {
-                                background: "#141414",
-                            }
-                        }}
-                    >
-                        CASE STUDIES COMING SOON
-                    </Button>
-                }
+                headerCarousel={comingSoon}
             />
             <CaseStudies />
             <About />
@@ -107,15 +63,10 @@ export const Home: React.FC<{}> = () => {
                 padding={"var(--cardPadding) 0 0"}
             />
             <Formbox />
-            <Box
-                bgcolor={"#000"}
-                component={motion.div}
-                initial={{ opacity: 0, transform: "translate(0, 10vh)" }}
-                whileInView={{ opacity: 1, transform: "translate(0, 0)" }}
-            >
+            <Box bgcolor={"#000"}>
                 <FooterBgBox />
                 <Footer />
             </Box>
-        </Container>
+        </Container >
     )
 }
