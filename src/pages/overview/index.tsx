@@ -18,7 +18,6 @@ export const Overview: React.FC<{}> = () => {
                 .toLowerCase() === overview
         )
     });
-    console.log(typeof caseStudy)
     return (
         <Container
             sx={{

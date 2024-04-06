@@ -19,15 +19,15 @@ import rowB03Wurlet from "../assets/RowB03-wurlet.svg";
 export const navLinks = [
     {
         name: "Work",
-        url: "#casestudies"
+        url: "/#casestudies"
     },
     {
         name: "About",
-        url: "#about"
+        url: "/#about"
     },
     {
         name: "Work with us",
-        url: "#workwithus"
+        url: "/#workwithus"
     },
     {
         name: "Contact",
